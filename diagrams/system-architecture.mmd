@@ -1,0 +1,36 @@
+flowchart TB
+  visitor["Visitor browser<br/>EN at / and FA (RTL) at /fa"]
+  app["Admin app<br/>Expo / React Native, Android-first"]
+  cron["Vercel Cron<br/>daily health check"]
+
+  subgraph vercel["Vercel: one Next.js application"]
+    pages["Public pages<br/>App Router, ISR"]
+    preview["Signed preview<br/>/preview/..."]
+    admin["Admin API<br/>/api/admin/*"]
+    pub["Public JSON + health<br/>/api/public/*, /api/health"]
+    cronroute["/api/cron/health"]
+    img["Image pipeline<br/>sharp: validate, strip metadata, WebP"]
+  end
+
+  subgraph supabase["Supabase"]
+    db[("Postgres<br/>RLS enabled")]
+    store[("Storage<br/>public-read media bucket")]
+  end
+
+  translate["Translation provider<br/>optional, Google Translate adapter"]
+
+  visitor -->|HTTPS| pages
+  visitor -->|HTTPS| pub
+  app -->|"HTTPS, Bearer device-session token"| admin
+  app -->|"HTTPS, 30-min preview link"| preview
+  cron --> cronroute
+
+  pages -->|"published rows only"| db
+  preview -->|"draft rows"| db
+  admin -->|"authorise every request, validate, write"| db
+  admin --> img --> store
+  admin -.->|"revalidate on change"| pages
+  admin -.->|"suggestions only, if configured"| translate
+  cronroute --> db
+  cronroute -.->|"fetch public site"| pages
+  pages -.->|"media URLs, served via next/image"| store

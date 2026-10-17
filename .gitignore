@@ -1,0 +1,40 @@
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+secrets/
+private/
+
+# Database exports and local data
+*.sql
+*.dump
+*.bak
+*.sqlite
+*.sqlite3
+
+# Dependencies and build artifacts
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.expo/
+android/
+ios/
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.temp
