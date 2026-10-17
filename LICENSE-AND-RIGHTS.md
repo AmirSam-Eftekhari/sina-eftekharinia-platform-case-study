@@ -1,11 +1,14 @@
 # License and Rights
 
-**Licensing is intentionally unresolved.** No open-source license file is included.
+**Licensing status: unresolved.** This repository does not currently include an open-source license. Unless a license is added, reuse of its original content is not granted by this repository.
 
-- **Documentation text:** the author may choose a license (for example CC BY 4.0) once decided. Until then, all rights are reserved by default.
-- **Application source code:** not published here and not licensed through this repository.
-- **Photographs, logo and artist branding:** publication rights must be confirmed with the photographers and the artist before any image appears in this repository. The website's photographs and logo are not reproduced here.
-- **Screenshots:** will show the artist's photographs and branding; confirm rights first or crop/blur them. Third-party fonts and libraries remain under their own licenses.
-- **Names and biography:** used with the artist's name only as needed to describe the project.
+- **Documentation:** Original documentation remains subject to applicable copyright unless and until an explicit license is added.
+- **Application source code:** Not included in this repository and not licensed through it.
+- **Photographs, logo and artist branding:** These materials may belong to the artist or third parties. Permission and applicable usage terms must be confirmed before public redistribution.
+- **Screenshots:** Screenshots may contain photographs, logos, branding or other third-party material. Confirm that public sharing is authorized, or remove, crop or redact material as appropriate before publishing.
+- **Third-party fonts and libraries:** Their original licenses and terms continue to apply.
+- **Names and biography:** References are limited to describing the project; they do not imply endorsement or transfer rights in the artist's identity or materials.
 
-Do not publish until these points are decided.
+## Publication status
+
+Before publishing, review the screenshots and confirm that the repository's contents may be shared publicly. No permission or license is claimed unless it has actually been obtained.
